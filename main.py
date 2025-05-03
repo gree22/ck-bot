@@ -30,7 +30,8 @@ async def receive_cards(message: Message, state: FSMContext):
     await message.answer("Verificando las tarjetas, por favor espera...")
 
     try:
-        response = requests.post(f"{https://gree22.github.io/mi-flask-app/}/verificar", json={"tarjetas": tarjetas})
+        response = requests.post(f"{WEBAPP_URL}/verificar", json={"tarjetas": tarjetas})
+
         result = response.json()
     except Exception as e:
         await message.answer("Error al conectar con la WebApp.")
