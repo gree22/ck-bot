@@ -43,3 +43,11 @@ async def receive_cards(message: Message, state: FSMContext):
 
     await message.answer(texto)
     await state.clear()
+    if __name__ == "__main__":
+    import asyncio
+
+    async def main():
+        await dp.start_polling(bot)
+
+    asyncio.run(main())
+
